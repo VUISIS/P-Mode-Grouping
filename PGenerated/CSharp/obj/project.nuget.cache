@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "78S0PdDjX8xjUSakLexBYt/YQ2m9AJ0WCMiHYCnAqMSMEbtpUS9DQm8qODWZSXlaqqe3WIuLBKrwFNphe6qTxQ==",
+  "success": true,
+  "projectFilePath": "/Users/sychoo/Downloads/P-lang/Tutorial/ModeGrouping/PGenerated/CSharp/WaypointAvoid.csproj",
+  "expectedPackageFiles": [
+    "/Users/sychoo/.nuget/packages/microsoft.netcore.app.ref/6.0.15/microsoft.netcore.app.ref.6.0.15.nupkg.sha512",
+    "/Users/sychoo/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.15/microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512",
+    "/Users/sychoo/.nuget/packages/microsoft.netcore.app.host.osx-x64/6.0.15/microsoft.netcore.app.host.osx-x64.6.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}

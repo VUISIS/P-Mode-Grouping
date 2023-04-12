@@ -1,0 +1,59 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "WaypointAvoid/1.0.0": {
+        "dependencies": {
+          "PCSharpRuntime": "2.0.5"
+        },
+        "runtime": {
+          "WaypointAvoid.dll": {}
+        }
+      },
+      "PCheckerCore/2.0.5": {
+        "runtime": {
+          "lib/net6.0/PCheckerCore.dll": {
+            "assemblyVersion": "2.0.5.0",
+            "fileVersion": "2.0.5.0"
+          }
+        }
+      },
+      "PCSharpRuntime/2.0.5": {
+        "dependencies": {
+          "PCheckerCore": "2.0.5"
+        },
+        "runtime": {
+          "lib/net6.0/PCSharpRuntime.dll": {
+            "assemblyVersion": "2.0.5.0",
+            "fileVersion": "2.0.5.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WaypointAvoid/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PCheckerCore/2.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j3bE32TeochuApEW6Y3NqksNwLe8Mru4k6SqVlSo4can59T23u1N1FcKxNSGFRV8fmTe33wTO4mPUxzSa+0OnA==",
+      "path": "pcheckercore/2.0.5",
+      "hashPath": "pcheckercore.2.0.5.nupkg.sha512"
+    },
+    "PCSharpRuntime/2.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TkWe3aKtIRCGqaJGFJmgIgAiWkGc/LOrrTYINy1x9apoJCUybYozILTyETWTKzeAmhNZO2wsTR+Lc5OarbqX1A==",
+      "path": "pcsharpruntime/2.0.5",
+      "hashPath": "pcsharpruntime.2.0.5.nupkg.sha512"
+    }
+  }
+}

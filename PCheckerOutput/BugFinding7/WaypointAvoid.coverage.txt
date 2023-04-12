@@ -1,0 +1,53 @@
+Total event coverage: 100.0%
+============================
+StateMachine: PImplementation.Test
+==================================
+Event coverage: 100.0%
+
+	State: __InitState__
+		State event coverage: 100.0%
+		Events received: PImplementation.Test+ConstructorEvent
+		Events sent: PImplementation.Test+ConstructorEvent
+		Next states: Init_2
+
+	State: Init_2
+		State has no expected events, so coverage is 100%
+		Previous states: __InitState__
+
+StateMachine: PImplementation.Waypoint
+======================================
+Event coverage: 100.0%
+
+	State: __InitState__
+		State event coverage: 100.0%
+		Events received: PImplementation.Waypoint+ConstructorEvent
+		Events sent: PImplementation.Waypoint+ConstructorEvent
+		Next states: Init_1
+
+	State: Init_1
+		State has no expected events, so coverage is 100%
+		Events sent: PImplementation.eMissionStart
+		Previous states: __InitState__
+		Next states: AdvanceWaypoint
+
+	State: AdvanceWaypoint
+		State event coverage: 100.0%
+		Events received: PImplementation.eMissionStart
+		Previous states: Init_1
+
+	State: ProceedToWaypoint
+		State has no expected events, so coverage is 100%
+
+	State: HoverAtWaypoint
+		State has no expected events, so coverage is 100%
+
+	State: Complete
+		State has no expected events, so coverage is 100%
+
+StateMachine: Plang.CSharpRuntime._GodMachine
+=============================================
+Event coverage: 100.0%
+
+	State: Init
+		State has no expected events, so coverage is 100%
+

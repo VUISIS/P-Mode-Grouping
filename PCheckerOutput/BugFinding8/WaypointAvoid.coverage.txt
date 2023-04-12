@@ -1,0 +1,23 @@
+Total event coverage: 100.0%
+============================
+StateMachine: PImplementation.Test
+==================================
+Event coverage: 100.0%
+
+	State: __InitState__
+		State event coverage: 100.0%
+		Events received: PImplementation.Test+ConstructorEvent
+		Events sent: PImplementation.Test+ConstructorEvent
+		Next states: Init_2
+
+	State: Init_2
+		State has no expected events, so coverage is 100%
+		Previous states: __InitState__
+
+StateMachine: Plang.CSharpRuntime._GodMachine
+=============================================
+Event coverage: 100.0%
+
+	State: Init
+		State has no expected events, so coverage is 100%
+

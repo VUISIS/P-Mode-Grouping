@@ -1,0 +1,148 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "PCheckerCore/2.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/PCheckerCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/PCheckerCore.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "PCSharpRuntime/2.0.5": {
+        "type": "package",
+        "dependencies": {
+          "PCheckerCore": "2.0.5"
+        },
+        "compile": {
+          "lib/net6.0/PCSharpRuntime.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/PCSharpRuntime.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PCheckerCore/2.0.5": {
+      "sha512": "j3bE32TeochuApEW6Y3NqksNwLe8Mru4k6SqVlSo4can59T23u1N1FcKxNSGFRV8fmTe33wTO4mPUxzSa+0OnA==",
+      "type": "package",
+      "path": "pcheckercore/2.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net6.0/PCheckerCore.dll",
+        "lib/net6.0/PCheckerCore.xml",
+        "pcheckercore.2.0.5.nupkg.sha512",
+        "pcheckercore.nuspec"
+      ]
+    },
+    "PCSharpRuntime/2.0.5": {
+      "sha512": "TkWe3aKtIRCGqaJGFJmgIgAiWkGc/LOrrTYINy1x9apoJCUybYozILTyETWTKzeAmhNZO2wsTR+Lc5OarbqX1A==",
+      "type": "package",
+      "path": "pcsharpruntime/2.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net6.0/PCSharpRuntime.dll",
+        "pcsharpruntime.2.0.5.nupkg.sha512",
+        "pcsharpruntime.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "PCSharpRuntime >= 2.*"
+    ]
+  },
+  "packageFolders": {
+    "/Users/sychoo/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/sychoo/Code/proj/vspells/ModeGrouping/PGenerated/WaypointAvoid.csproj",
+      "projectName": "WaypointAvoid",
+      "projectPath": "/Users/sychoo/Code/proj/vspells/ModeGrouping/PGenerated/WaypointAvoid.csproj",
+      "packagesPath": "/Users/sychoo/.nuget/packages/",
+      "outputPath": "/Users/sychoo/Code/proj/vspells/ModeGrouping/PGenerated/obj/",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "/Users/sychoo/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "dependencies": {
+          "PCSharpRuntime": {
+            "target": "Package",
+            "version": "[2.*, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.15, 6.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.osx-x64",
+            "version": "[6.0.15, 6.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.15, 6.0.15]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
