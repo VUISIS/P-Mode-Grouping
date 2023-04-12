@@ -1,12 +1,20 @@
 // created by Simon Chu
 // 2023-04-12 10:56:43
 
+// purpose:
 // fine grained modeling of waypoint following mode
 // based on MAV_CMD_NAV_WAYPOINT command for MAVLink
 // https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html#mav-cmd-nav-waypoint
 
+// functionality:
+// ArduPilot waypoint mode (auto mode) allow the drone to visit each waypoints
+// and hover at each waypoints for a number of seconds before proceeding to the next waypoints
+
+
+type tMissionComplete = (current_waypoint_index : int, number_of_waypoints : int);
+
 event eMissionStart;
-event eMissionComplete;
+event eMissionComplete : tMissionComplete;
 
 event eProceedToWaypoint;
 event eHoverAtWaypoint;
@@ -69,7 +77,7 @@ machine Waypoint
 
       // check if the current waypoint is the last waypoint
       if (current_waypoint_index == number_of_waypoints - 1) {
-        send this, eMissionComplete;
+        send this, eMissionComplete, (current_waypoint_index = current_waypoint_index, number_of_waypoints = number_of_waypoints);
         goto MissionComplete;
       } else {
         send this, eAdvanceWaypoint;
@@ -81,15 +89,18 @@ machine Waypoint
   // complete the task
   state MissionComplete {
     on eMissionComplete do {
+      print format ("[Waypoint] Mission completed. Current Waypoint Index = {0}, Number of Waypoints = {1}", current_waypoint_index, number_of_waypoints);
+
       send this, eModeless;
       goto Modeless;
     }
   }
 
-  // available to switch to other mode
+  // the Modeless state allow the drone to switch to other mode
   state Modeless {
     on eModeless do {
-      assert false, "modeless";
+      // FIXME: this is here to trigger an example bug.
+      // assert false, "modeless";
     }
   }
 } 

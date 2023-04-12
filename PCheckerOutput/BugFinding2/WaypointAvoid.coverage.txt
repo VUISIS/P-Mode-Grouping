@@ -1,4 +1,4 @@
-Total event coverage: 71.4%
+Total event coverage: 46.2%
 ===========================
 StateMachine: PImplementation.Test
 ==================================
@@ -8,15 +8,15 @@ Event coverage: 100.0%
 		State event coverage: 100.0%
 		Events received: PImplementation.Test+ConstructorEvent
 		Events sent: PImplementation.Test+ConstructorEvent
-		Next states: Init_2
+		Next states: Init_3
 
-	State: Init_2
+	State: Init_3
 		State has no expected events, so coverage is 100%
 		Previous states: __InitState__
 
 StateMachine: PImplementation.Waypoint
 ======================================
-Event coverage: 66.7%
+Event coverage: 71.4%
 
 	State: __InitState__
 		State event coverage: 100.0%
@@ -32,7 +32,7 @@ Event coverage: 66.7%
 
 	State: AdvanceWaypoint
 		State event coverage: 100.0%
-		Events received: PImplementation.eMissionStart
+		Events received: PImplementation.eAdvanceWaypoint, PImplementation.eMissionStart
 		Events sent: PImplementation.eProceedToWaypoint
 		Previous states: HoverAtWaypoint, Init_1
 		Next states: ProceedToWaypoint
@@ -56,6 +56,23 @@ Event coverage: 66.7%
 
 	State: Modeless is uncovered
 		Events not covered: PImplementation.eModeless
+
+Monitor: PImplementation.WaypointCorrect
+========================================
+Event coverage: 0.0%
+
+	State: Init_2 is uncovered
+		Events received: eMissionStart
+		Events not covered: PImplementation.eMissionStart
+		Next states: ExecutingMission[hot]
+
+	State: ExecutingMission is uncovered
+		Events received: eAdvanceWaypoint, eHoverAtWaypoint, eMissionComplete, eProceedToWaypoint
+		Events not covered: PImplementation.eAdvanceWaypoint, PImplementation.eHoverAtWaypoint, PImplementation.eMissionComplete, PImplementation.eProceedToWaypoint
+		Next states: ExecutingMission[hot]
+
+	State: MissionComplete_1
+		State has no expected events, so coverage is 100%
 
 StateMachine: Plang.CSharpRuntime._GodMachine
 =============================================

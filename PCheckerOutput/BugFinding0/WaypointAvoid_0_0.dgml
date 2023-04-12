@@ -1,21 +1,25 @@
 ﻿<DirectedGraph xmlns='http://schemas.microsoft.com/vs/2009/dgml'>
   <Nodes>
-    <Node Id='PImplementation.Test' Category='StateMachine' Group='Expanded'/>
-    <Node Id='PImplementation.Test.Init_2' Label='Init_2'/>
-    <Node Id='PImplementation.Test.__InitState__' Label='__InitState__'/>
+    <Node Id='PImplementation.Test_Waypoint' Category='StateMachine' Group='Expanded'/>
+    <Node Id='PImplementation.Test_Waypoint.Init_4' Label='Init_4'/>
+    <Node Id='PImplementation.Test_Waypoint.__InitState__' Label='__InitState__'/>
     <Node Id='PImplementation.Waypoint' Category='StateMachine' Group='Expanded'/>
     <Node Id='PImplementation.Waypoint.AdvanceWaypoint' Label='AdvanceWaypoint'/>
     <Node Id='PImplementation.Waypoint.HoverAtWaypoint' Label='HoverAtWaypoint'/>
     <Node Id='PImplementation.Waypoint.Init_1' Label='Init_1'/>
     <Node Id='PImplementation.Waypoint.ProceedToWaypoint' Label='ProceedToWaypoint'/>
     <Node Id='PImplementation.Waypoint.__InitState__' Label='__InitState__'/>
+    <Node Id='PImplementation.WaypointCorrect' Label='PImplementation.WaypointCorrect' Category='Monitor' Group='Expanded'/>
+    <Node Id='PImplementation.WaypointCorrect.ExecutingMission' Label='ExecutingMission'/>
+    <Node Id='PImplementation.WaypointCorrect.ExecutingMission[hot]' Label='ExecutingMission[hot]'/>
+    <Node Id='PImplementation.WaypointCorrect.Init_2' Label='Init_2'/>
     <Node Id='Plang.CSharpRuntime._GodMachine' Category='StateMachine' Group='Expanded'/>
     <Node Id='Plang.CSharpRuntime._GodMachine.Init' Label='Init'/>
   </Nodes>
   <Links>
-    <Link Source='PImplementation.Test' Target='PImplementation.Test.Init_2' Category='Contains'/>
-    <Link Source='PImplementation.Test' Target='PImplementation.Test.__InitState__' Category='Contains'/>
-    <Link Source='PImplementation.Test.__InitState__' Target='PImplementation.Test.Init_2' Label='ConstructorEvent' Index='0' EventId='PImplementation.Test+ConstructorEvent'/>
+    <Link Source='PImplementation.Test_Waypoint' Target='PImplementation.Test_Waypoint.Init_4' Category='Contains'/>
+    <Link Source='PImplementation.Test_Waypoint' Target='PImplementation.Test_Waypoint.__InitState__' Category='Contains'/>
+    <Link Source='PImplementation.Test_Waypoint.__InitState__' Target='PImplementation.Test_Waypoint.Init_4' Label='ConstructorEvent' Index='0' EventId='PImplementation.Test_Waypoint+ConstructorEvent'/>
     <Link Source='PImplementation.Waypoint' Target='PImplementation.Waypoint.AdvanceWaypoint' Category='Contains'/>
     <Link Source='PImplementation.Waypoint' Target='PImplementation.Waypoint.HoverAtWaypoint' Category='Contains'/>
     <Link Source='PImplementation.Waypoint' Target='PImplementation.Waypoint.Init_1' Category='Contains'/>
@@ -23,12 +27,26 @@
     <Link Source='PImplementation.Waypoint' Target='PImplementation.Waypoint.__InitState__' Category='Contains'/>
     <Link Source='PImplementation.Waypoint.AdvanceWaypoint' Target='PImplementation.Waypoint.ProceedToWaypoint' Label='goto' Category='goto' Index='0' EventId='PChecker.Actors.Events.GotoStateEvent'/>
     <Link Source='PImplementation.Waypoint.AdvanceWaypoint' Target='PImplementation.Waypoint.ProceedToWaypoint' Label='eProceedToWaypoint' Index='1' EventId='PImplementation.eProceedToWaypoint' HandledBy='ProceedToWaypoint'/>
+    <Link Source='PImplementation.Waypoint.AdvanceWaypoint' Target='PImplementation.WaypointCorrect.ExecutingMission' Label='eProceedToWaypoint' Index='0' EventId='eProceedToWaypoint'/>
     <Link Source='PImplementation.Waypoint.HoverAtWaypoint' Target='PImplementation.Waypoint.AdvanceWaypoint' Label='goto' Category='goto' Index='0' EventId='PChecker.Actors.Events.GotoStateEvent'/>
+    <Link Source='PImplementation.Waypoint.HoverAtWaypoint' Target='PImplementation.Waypoint.AdvanceWaypoint' Label='eAdvanceWaypoint' Index='1' EventId='PImplementation.eAdvanceWaypoint' HandledBy='AdvanceWaypoint'/>
+    <Link Source='PImplementation.Waypoint.HoverAtWaypoint' Target='PImplementation.WaypointCorrect.ExecutingMission' Label='eAdvanceWaypoint' Index='0' EventId='eAdvanceWaypoint'/>
+    <Link Source='PImplementation.Waypoint.HoverAtWaypoint' Target='PImplementation.WaypointCorrect.ExecutingMission' Label='eMissionComplete' Index='1' EventId='eMissionComplete'/>
     <Link Source='PImplementation.Waypoint.Init_1' Target='PImplementation.Waypoint.AdvanceWaypoint' Label='goto' Category='goto' Index='0' EventId='PChecker.Actors.Events.GotoStateEvent'/>
     <Link Source='PImplementation.Waypoint.Init_1' Target='PImplementation.Waypoint.AdvanceWaypoint' Label='eMissionStart' Index='1' EventId='PImplementation.eMissionStart' HandledBy='AdvanceWaypoint'/>
+    <Link Source='PImplementation.Waypoint.Init_1' Target='PImplementation.WaypointCorrect.Init_2' Label='eMissionStart' Index='0' EventId='eMissionStart'/>
     <Link Source='PImplementation.Waypoint.ProceedToWaypoint' Target='PImplementation.Waypoint.HoverAtWaypoint' Label='goto' Category='goto' Index='0' EventId='PChecker.Actors.Events.GotoStateEvent'/>
     <Link Source='PImplementation.Waypoint.ProceedToWaypoint' Target='PImplementation.Waypoint.HoverAtWaypoint' Label='eHoverAtWaypoint' Index='1' EventId='PImplementation.eHoverAtWaypoint' HandledBy='HoverAtWaypoint'/>
+    <Link Source='PImplementation.Waypoint.ProceedToWaypoint' Target='PImplementation.WaypointCorrect.ExecutingMission' Label='eHoverAtWaypoint' Index='0' EventId='eHoverAtWaypoint'/>
     <Link Source='PImplementation.Waypoint.__InitState__' Target='PImplementation.Waypoint.Init_1' Label='ConstructorEvent' Index='0' EventId='PImplementation.Waypoint+ConstructorEvent'/>
+    <Link Source='PImplementation.WaypointCorrect' Target='PImplementation.WaypointCorrect.ExecutingMission' Category='Contains'/>
+    <Link Source='PImplementation.WaypointCorrect' Target='PImplementation.WaypointCorrect.ExecutingMission[hot]' Category='Contains'/>
+    <Link Source='PImplementation.WaypointCorrect' Target='PImplementation.WaypointCorrect.Init_2' Category='Contains'/>
+    <Link Source='PImplementation.WaypointCorrect.ExecutingMission' Target='PImplementation.WaypointCorrect.ExecutingMission[hot]' Label='eProceedToWaypoint' Index='0' EventId='eProceedToWaypoint'/>
+    <Link Source='PImplementation.WaypointCorrect.ExecutingMission' Target='PImplementation.WaypointCorrect.ExecutingMission[hot]' Label='eHoverAtWaypoint' Index='1' EventId='eHoverAtWaypoint'/>
+    <Link Source='PImplementation.WaypointCorrect.ExecutingMission' Target='PImplementation.WaypointCorrect.ExecutingMission[hot]' Label='eAdvanceWaypoint' Index='2' EventId='eAdvanceWaypoint'/>
+    <Link Source='PImplementation.WaypointCorrect.ExecutingMission' Target='PImplementation.WaypointCorrect.ExecutingMission[hot]' Label='eMissionComplete' Index='3' EventId='eMissionComplete'/>
+    <Link Source='PImplementation.WaypointCorrect.Init_2' Target='PImplementation.WaypointCorrect.ExecutingMission[hot]' Label='eMissionStart' Index='0' EventId='eMissionStart'/>
     <Link Source='Plang.CSharpRuntime._GodMachine' Target='Plang.CSharpRuntime._GodMachine.Init' Category='Contains'/>
   </Links>
   <Styles>
