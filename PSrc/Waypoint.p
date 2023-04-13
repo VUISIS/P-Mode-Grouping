@@ -20,7 +20,7 @@ event eProceedToWaypoint;
 event eHoverAtWaypoint;
 event eAdvanceWaypoint;
 
-event eModeless;
+event eWaypointModeless;
 
 machine Waypoint
 {
@@ -91,14 +91,14 @@ machine Waypoint
     on eMissionComplete do {
       print format ("[Waypoint] Mission completed. Current Waypoint Index = {0}, Number of Waypoints = {1}", current_waypoint_index, number_of_waypoints);
 
-      send this, eModeless;
+      send this, eWaypointModeless;
       goto Modeless;
     }
   }
 
   // the Modeless state allow the drone to switch to other mode
   state Modeless {
-    on eModeless do {
+    on eWaypointModeless do {
       // FIXME: this is here to trigger an example bug.
       // assert false, "modeless";
     }

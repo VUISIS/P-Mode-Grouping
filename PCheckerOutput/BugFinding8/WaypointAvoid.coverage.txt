@@ -1,67 +1,79 @@
-Total event coverage: 100.0%
-============================
-StateMachine: PImplementation.Test
-==================================
-Event coverage: 100.0%
+Total event coverage: 50.0%
+===========================
+StateMachine: PImplementation.Avoid
+===================================
+Event coverage: 80.0%
 
 	State: __InitState__
 		State event coverage: 100.0%
-		Events received: PImplementation.Test+ConstructorEvent
-		Events sent: PImplementation.Test+ConstructorEvent
-		Next states: Init_3
+		Events received: PImplementation.Avoid+ConstructorEvent
+		Events sent: PImplementation.Avoid+ConstructorEvent
+		Next states: Init
 
-	State: Init_3
+	State: Init
 		State has no expected events, so coverage is 100%
+		Events sent: PImplementation.eAvoidStart
 		Previous states: __InitState__
+		Next states: DetectingIntrusion
 
-StateMachine: PImplementation.Waypoint
-======================================
-Event coverage: 100.0%
+	State: DetectingIntrusion
+		State event coverage: 50.0%
+		Events received: PImplementation.eAvoidStart
+		Events sent: PImplementation.eIntrusionDetected
+		Events not covered: PImplementation.eAvoidManeuverComplete
+		Previous states: Init
+		Next states: AvoidManeuver
 
-	State: __InitState__
+	State: AvoidManeuver
 		State event coverage: 100.0%
-		Events received: PImplementation.Waypoint+ConstructorEvent
-		Events sent: PImplementation.Waypoint+ConstructorEvent
-		Next states: Init_1
-
-	State: Init_1
-		State has no expected events, so coverage is 100%
-		Events sent: PImplementation.eMissionStart
-		Previous states: __InitState__
-		Next states: AdvanceWaypoint
-
-	State: AdvanceWaypoint
-		State event coverage: 100.0%
-		Events received: PImplementation.eAdvanceWaypoint, PImplementation.eMissionStart
-		Events sent: PImplementation.eProceedToWaypoint
-		Previous states: HoverAtWaypoint, Init_1
-		Next states: ProceedToWaypoint
-
-	State: ProceedToWaypoint
-		State event coverage: 100.0%
-		Events received: PImplementation.eProceedToWaypoint
-		Events sent: PImplementation.eHoverAtWaypoint
-		Previous states: AdvanceWaypoint
-		Next states: HoverAtWaypoint
-
-	State: HoverAtWaypoint
-		State event coverage: 100.0%
-		Events received: PImplementation.eHoverAtWaypoint
-		Events sent: PImplementation.eAdvanceWaypoint, PImplementation.eMissionComplete
-		Previous states: ProceedToWaypoint
-		Next states: AdvanceWaypoint, MissionComplete
-
-	State: MissionComplete
-		State event coverage: 100.0%
-		Events received: PImplementation.eMissionComplete
-		Events sent: PImplementation.eModeless
-		Previous states: HoverAtWaypoint
+		Events received: PImplementation.eIntrusionDetected
+		Events sent: PImplementation.eAvoidModeless
+		Previous states: DetectingIntrusion
 		Next states: Modeless
 
 	State: Modeless
 		State event coverage: 100.0%
-		Events received: PImplementation.eModeless
-		Previous states: MissionComplete
+		Events received: PImplementation.eAvoidModeless
+		Previous states: AvoidManeuver
+
+Monitor: PImplementation.AvoidCorrect
+=====================================
+Event coverage: 0.0%
+
+	State: Init_4 is uncovered
+		Events received: eAvoidStart
+		Events not covered: PImplementation.eAvoidStart
+		Previous states: Init_4
+		Next states: DetectingIntrusion_1, Init_4
+
+	State: DetectingIntrusion_1 is uncovered
+		Events received: eIntrusionDetected
+		Events not covered: PImplementation.eIntrusionDetected
+		Previous states: DetectingIntrusion_1, Init_4
+		Next states: AvoidManeuver_1[hot], DetectingIntrusion_1
+
+	State: AvoidManeuver_1 is uncovered
+		Events received: eAvoidModeless
+		Events not covered: PImplementation.eAvoidManeuverComplete, PImplementation.eAvoidModeless
+		Next states: AvoidManeuver_1[hot], Modeless_2
+
+	State: Modeless_2
+		State has no expected events, so coverage is 100%
+		Previous states: AvoidManeuver_1
+
+StateMachine: PImplementation.Test_Avoid
+========================================
+Event coverage: 100.0%
+
+	State: __InitState__
+		State event coverage: 100.0%
+		Events received: PImplementation.Test_Avoid+ConstructorEvent
+		Events sent: PImplementation.Test_Avoid+ConstructorEvent
+		Next states: Init_6
+
+	State: Init_6
+		State has no expected events, so coverage is 100%
+		Previous states: __InitState__
 
 StateMachine: Plang.CSharpRuntime._GodMachine
 =============================================
