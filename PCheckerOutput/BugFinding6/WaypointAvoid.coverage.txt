@@ -1,8 +1,8 @@
-Total event coverage: 30.0%
+Total event coverage: 40.0%
 ===========================
 StateMachine: PImplementation.Avoid
 ===================================
-Event coverage: 40.0%
+Event coverage: 60.0%
 
 	State: __InitState__
 		State event coverage: 100.0%
@@ -19,11 +19,15 @@ Event coverage: 40.0%
 	State: DetectingIntrusion
 		State event coverage: 50.0%
 		Events received: PImplementation.eAvoidStart
+		Events sent: PImplementation.eIntrusionDetected
 		Events not covered: PImplementation.eAvoidManeuverComplete
 		Previous states: Init
+		Next states: AvoidManeuver
 
-	State: AvoidManeuver is uncovered
-		Events not covered: PImplementation.eIntrusionDetected
+	State: AvoidManeuver
+		State event coverage: 100.0%
+		Events received: PImplementation.eIntrusionDetected
+		Previous states: DetectingIntrusion
 
 	State: Modeless is uncovered
 		Events not covered: PImplementation.eAvoidModeless
@@ -42,10 +46,12 @@ Event coverage: 0.0%
 		Events received: eIntrusionDetected
 		Events not covered: PImplementation.eIntrusionDetected
 		Previous states: DetectingIntrusion_1, Init_4
-		Next states: DetectingIntrusion_1
+		Next states: AvoidManeuver_1[hot], DetectingIntrusion_1
 
 	State: AvoidManeuver_1 is uncovered
+		Events received: eAvoidManeuverComplete
 		Events not covered: PImplementation.eAvoidManeuverComplete, PImplementation.eAvoidModeless
+		Next states: AvoidManeuver_1[hot]
 
 	State: Modeless_2
 		State has no expected events, so coverage is 100%

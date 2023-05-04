@@ -24,9 +24,9 @@
 <StateLog> Avoid(3) exits state 'DetectingIntrusion'.
 <StateLog> Avoid(3) enters state 'AvoidManeuver'.
 <DequeueLog> 'Avoid(3)' dequeued event 'eIntrusionDetected' in state 'AvoidManeuver'.
-<PrintLog> Avoidance maneuver proceeding. 9 intruding aircraft remaining.
-<MonitorLog> AvoidCorrect is processing event 'eAvoidManeuverComplete' in state 'AvoidManeuver_1'.
-<ErrorLog> Assertion Failed: Detection Avoidance Counter Mismatch! detection_counter = 1, avoidance_counter = 1
+<PrintLog> Avoidance maneuver proceeding. -1 intruding aircraft remaining.
+<MonitorLog> AvoidCorrect is processing event 'eAvoidModeless' in state 'AvoidManeuver_1'.
+<ErrorLog> Assertion Failed: 
 <StrategyLog> Found bug using 'random' strategy.
 <StrategyLog> Checking statistics:
 <StrategyLog> Found 1 bug.

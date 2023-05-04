@@ -533,7 +533,7 @@ namespace PImplementation
             PrtString TMP_tmp4_5 = ((PrtString)"");
             TMP_tmp0_11 = (PrtInt)((avoidance_counter) + (((PrtInt)1)));
             avoidance_counter = TMP_tmp0_11;
-            TMP_tmp1_9 = (PrtBool)((PrtValues.SafeEquals(detection_counter,avoidance_counter)));
+            TMP_tmp1_9 = (PrtBool)((!PrtValues.SafeEquals(detection_counter,avoidance_counter)));
             TMP_tmp2_6 = (PrtInt)(((PrtInt)((IPrtValue)detection_counter)?.Clone()));
             TMP_tmp3_6 = (PrtInt)(((PrtInt)((IPrtValue)avoidance_counter)?.Clone()));
             TMP_tmp4_5 = (PrtString)(((PrtString) String.Format("Detection Avoidance Counter Mismatch! detection_counter = {0}, avoidance_counter = {1}",TMP_tmp2_6,TMP_tmp3_6)));
