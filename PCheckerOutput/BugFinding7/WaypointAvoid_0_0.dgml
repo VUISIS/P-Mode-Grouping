@@ -21,10 +21,7 @@
     <Link Source='PImplementation.Avoid' Target='PImplementation.Avoid.DetectingIntrusion' Category='Contains'/>
     <Link Source='PImplementation.Avoid' Target='PImplementation.Avoid.Init' Category='Contains'/>
     <Link Source='PImplementation.Avoid' Target='PImplementation.Avoid.__InitState__' Category='Contains'/>
-    <Link Source='PImplementation.Avoid.AvoidManeuver' Target='PImplementation.Avoid.DetectingIntrusion' Label='goto' Category='goto' Index='0' EventId='PChecker.Actors.Events.GotoStateEvent'/>
-    <Link Source='PImplementation.Avoid.AvoidManeuver' Target='PImplementation.Avoid.DetectingIntrusion' Label='eAvoidManeuverComplete' Index='1' EventId='PImplementation.eAvoidManeuverComplete' HandledBy='DetectingIntrusion'/>
     <Link Source='PImplementation.Avoid.AvoidManeuver' Target='PImplementation.AvoidCorrect.AvoidManeuver_1' Label='eAvoidManeuverComplete' Index='0' EventId='eAvoidManeuverComplete'/>
-    <Link Source='PImplementation.Avoid.AvoidManeuver' Target='PImplementation.AvoidCorrect.AvoidManeuver_1' Label='eAvoidModeless' Index='1' EventId='eAvoidModeless'/>
     <Link Source='PImplementation.Avoid.DetectingIntrusion' Target='PImplementation.Avoid.AvoidManeuver' Label='goto' Category='goto' Index='0' EventId='PChecker.Actors.Events.GotoStateEvent'/>
     <Link Source='PImplementation.Avoid.DetectingIntrusion' Target='PImplementation.Avoid.AvoidManeuver' Label='eIntrusionDetected' Index='1' EventId='PImplementation.eIntrusionDetected' HandledBy='AvoidManeuver'/>
     <Link Source='PImplementation.Avoid.DetectingIntrusion' Target='PImplementation.AvoidCorrect.DetectingIntrusion_1' Label='eIntrusionDetected' Index='0' EventId='eIntrusionDetected'/>
@@ -37,8 +34,6 @@
     <Link Source='PImplementation.AvoidCorrect' Target='PImplementation.AvoidCorrect.DetectingIntrusion_1' Category='Contains'/>
     <Link Source='PImplementation.AvoidCorrect' Target='PImplementation.AvoidCorrect.Init_4' Category='Contains'/>
     <Link Source='PImplementation.AvoidCorrect.AvoidManeuver_1' Target='PImplementation.AvoidCorrect.AvoidManeuver_1[hot]' Label='eAvoidManeuverComplete' Index='0' EventId='eAvoidManeuverComplete'/>
-    <Link Source='PImplementation.AvoidCorrect.AvoidManeuver_1' Target='PImplementation.AvoidCorrect.AvoidManeuver_1[hot]' Label='eAvoidModeless' Index='1' EventId='eAvoidModeless'/>
-    <Link Source='PImplementation.AvoidCorrect.AvoidManeuver_1' Target='PImplementation.AvoidCorrect.DetectingIntrusion_1' Label='goto' Category='goto' Index='0' EventId='PChecker.Actors.Events.GotoStateEvent'/>
     <Link Source='PImplementation.AvoidCorrect.DetectingIntrusion_1' Target='PImplementation.AvoidCorrect.AvoidManeuver_1[hot]' Label='goto' Category='goto' Index='0' EventId='PChecker.Actors.Events.GotoStateEvent'/>
     <Link Source='PImplementation.AvoidCorrect.DetectingIntrusion_1' Target='PImplementation.AvoidCorrect.DetectingIntrusion_1' Label='eIntrusionDetected' Index='0' EventId='eIntrusionDetected'/>
     <Link Source='PImplementation.AvoidCorrect.Init_4' Target='PImplementation.AvoidCorrect.DetectingIntrusion_1' Label='goto' Category='goto' Index='0' EventId='PChecker.Actors.Events.GotoStateEvent'/>
